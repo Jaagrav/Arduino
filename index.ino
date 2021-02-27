@@ -57,6 +57,77 @@ String
   optr = "=",
   sixteenString = "                ";
 
+/*
+In the below switch-case replace the numbers with the IR codes
+from your remote. Make sure you write the code that gets printed
+in your serial monitor from line 142.
+*/
+
+void acceptInput(int character) {
+  Serial.println(character);
+  switch(character) {
+  	case 2222: 
+      concatNumbers("1");
+    break;
+    case -31092:
+      concatNumbers("2");
+    break;
+    case 18888:
+      concatNumbers("3");
+    break;
+    case 10000:
+      concatNumbers("4");
+    break;
+    case -22203:
+      concatNumbers("5");
+    break;
+    case 26666:
+      concatNumbers("6");
+    break;
+    case 6333:
+      concatNumbers("7");
+    break;
+    case -25537:
+      concatNumbers("8");
+    break;
+    case 22222:
+      concatNumbers("9");
+    break;
+    case 12222:
+      concatNumbers("0");
+    break;
+    case 28888:
+      concatNumbers(".");
+    break;
+    case 255:
+      number1 = "0";
+      number2 = "0";
+      optr = "=";
+    break;
+    case 32222:
+      function("+");
+    break;
+    case -28870:
+      function("-");
+    break;
+    case 24444:
+      function("/");
+    break;
+    case 8444:
+      function("x");
+    break;
+    case 45555:
+      if(optr != "=")
+        calculate("=");
+    break;
+    case 4333:
+      backSpace();
+    break;
+    default: 
+    Serial.println("Invalid Input");
+  }
+}
+
 void setup() {
   Serial.begin(9600);
   
@@ -130,75 +201,4 @@ void backSpace() {
   number2 = number2.substring(0, number2.length() - 1);
     if(number2 == "")
       number2 = "0";
-}
-
-/*
-In the below switch-case replace the numbers with the IR codes
-from your remote. Make sure you write the code that gets printed
-in your serial monitor from line 142.
-*/
-
-void acceptInput(int character) {
-  Serial.println(character);
-  switch(character) {
-  	case 2222: 
-      concatNumbers("1");
-    break;
-    case -31092:
-      concatNumbers("2");
-    break;
-    case 18888:
-      concatNumbers("3");
-    break;
-    case 10000:
-      concatNumbers("4");
-    break;
-    case -22203:
-      concatNumbers("5");
-    break;
-    case 26666:
-      concatNumbers("6");
-    break;
-    case 6333:
-      concatNumbers("7");
-    break;
-    case -25537:
-      concatNumbers("8");
-    break;
-    case 22222:
-      concatNumbers("9");
-    break;
-    case 12222:
-      concatNumbers("0");
-    break;
-    case 28888:
-      concatNumbers(".");
-    break;
-    case 255:
-      number1 = "0";
-      number2 = "0";
-      optr = "=";
-    break;
-    case 32222:
-      function("+");
-    break;
-    case -28870:
-      function("-");
-    break;
-    case 24444:
-      function("/");
-    break;
-    case 8444:
-      function("x");
-    break;
-    case 45555:
-      if(optr != "=")
-        calculate("=");
-    break;
-    case 4333:
-      backSpace();
-    break;
-    default: 
-    Serial.println("Invalid Input");
-  }
 }
