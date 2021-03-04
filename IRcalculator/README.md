@@ -23,4 +23,12 @@ Check out the code in `index.ino` and use it to run your calculator.
 | 2 |     GND     | GND                       |
 | 3 |     5V      | Power                     |
 
+## Packages used
+- **IRremote** by shirriff, z3t0, ArminJo - *v2.5.0*
+- **LiquidCrystal** by Arduino, Adafruit - *v1.0.7*
+
+Make sure you are using these packages and have installed the same version, in some future versions some of the functionality of the packages used in this project like IRremote or LiquidCrystal might be deprecated, which might lead to unexpected errors.
+<br><br>
 Here's the link to a [Tinkercad simulation](https://www.tinkercad.com/things/8h02ju1j0Ls), remember the simulation may not be as accurate and smooth as a real Arduino board.
+<br><br>
+Check this out working in real life here: https://youtu.be/SGjUDUwGbTc
